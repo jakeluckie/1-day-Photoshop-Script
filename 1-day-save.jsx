@@ -89,13 +89,13 @@ function cycleThroughLayers() {
             changeLayerVisibility(groupLayer, true);
 
             if (groupName == '_1') {
-                firstZoom = groupLayer
+                firstZoom = groupLayer // sets firstZoom to equal the group '_1'
 
-                saveFile(accredoUploadsFolder + '/' + productCode + '_zoom.jpg');
-            }; // sets firstZoom to equal the group '_1'
+                saveFile(accredoUploadsFolder + '/' + productCode + '_zoom.jpg'); // saves images for accredo
+            }; 
 
             saveFile(saveForWebFolder + '/' + productCode + '_' + productColour + groupName + '.jpg');
-            //saveFile(imageUploadsFolder + '/' + productCode + '_' + productColour + groupName + '.jpg');
+            saveFile(imageUploadsFolder + '/' + productCode + '_' + productColour + groupName + '.jpg');
 
             changeLayerVisibility(groupLayer, false);
 
