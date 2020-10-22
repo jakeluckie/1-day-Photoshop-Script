@@ -75,8 +75,19 @@ function setProductColour() {
     }
 }
 
+function getNumberOfZooms() {
+    var numberOfZooms = 0;
+    for (k = 0; k < doc.layerSets.length; k++) {
+        if (doc.layerSets[k].artLayers.length !== 0) {
+            var numberOfZooms = numberOfZooms + 1;
+    } 
+    return numberOfZooms;
+}
+
 function cycleThroughLayers() {
     setProductColour();
+    var zoomNumber = getNumberOfZooms();
+
     for (h = 0; h < doc.layerSets.length; h++){
         doc.layerSets[h].visible = false;
     }
@@ -99,7 +110,7 @@ function cycleThroughLayers() {
 
             changeLayerVisibility(groupLayer, false);
 
-            progressBarValue = progressBarValue + 100 / doc.layerSets.length;
+            progressBarValue = progressBarValue + 100 / zoomNumber;
             win.bar.value = progressBarValue;
         } 
     }
