@@ -17,7 +17,7 @@ const productCode = codeAndFolderSplit[0]; // final product code extracted from 
 const folder = codeAndFolderSplit[1]; // Working folder extracted from filePath
 
 var productColour = 'NOTSET'; //sets default colour to be NOTSET
-var savedState = app.activeDocument.activeHistoryState
+var savedState = app.activeDocument.activeHistoryState;
 
 var firstZoom = 0;
 
@@ -80,6 +80,7 @@ function getNumberOfZooms() {
     for (k = 0; k < doc.layerSets.length; k++) {
         if (doc.layerSets[k].artLayers.length !== 0) {
             var numberOfZooms = numberOfZooms + 1;
+        }
     } 
     return numberOfZooms;
 }
@@ -136,4 +137,3 @@ function main () {
 }
 
 main();
-
